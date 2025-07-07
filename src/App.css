@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-custom-cyan: #2acfcf;
+  --color-custom-dark-violet: #3b3054;
+
+  --color-custom-red: #f46262;
+
+  --color-custom-gray: #bfbfbf;
+  --color-custom-grayish-violet: #9e9aa7;
+  --color-custom-very-dark-blue: #35323e;
+  --color-custom-very-dark-violet: #232127;
+}
+a,
+button {
+  cursor: pointer;
+  outline: none;
+}
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-display: swap;
+  background-color: white;
+  overflow-x: hidden;
+}
+#root {
+  min-height: 100vh;
+}
+body header ul li {
+  cursor: pointer;
+}
+body header ul li:not(.special):hover {
+  opacity: 0.6;
+  transition: 200ms;
+}
+@media (min-width: 640px) {
+  body header ul li:not(.special):hover {
+    color: var(--color-custom-dark-violet);
+    transition: 200ms;
+  }
+}
+/* #landing {
+  min-height: calc(100vh - 76px);
+} */
+#stats {
+  min-height: 100vh;
+}
+#link-form {
+  background-image: url(./images/bg-shorten-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 640px) {
+  #link-form {
+    background-image: url(./images/bg-shorten-desktop.svg);
+  }
+}
+#stats-container::after {
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: var(--color-custom-cyan);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+#boost-section {
+  background-image: url(./images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 1024px) {
+  #stats-container::after {
+    top: 50%;
+    left: 0;
+    transform: translateX(0);
+    transform: translateY(-50%);
+    width: 100%;
+    height: 5px;
+  }
+  #boost-section {
+    background-image: url(./images/bg-boost-desktop.svg);
+  }
+}
+footer ul a {
+  transition: 200ms;
+}
+footer ul a:hover {
+  color: var(--color-custom-cyan);
+}
